@@ -1,0 +1,286 @@
+
+:root {
+  --bg: #0c0d10;
+  --surface: #151619;
+  --surface-hover: #1b1c20;
+  --text: #f0ede5;
+  --muted: #92939a;
+  --gold: #d5c49a;
+  --teal: #274b4b;
+  --border: rgba(240, 237, 229, 0.10);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  overflow-x: hidden;
+  background: var(--bg);
+  color: var(--text);
+  font-family: Inter, "Segoe UI", Arial, sans-serif;
+  line-height: 1.7;
+  -webkit-font-smoothing: antialiased;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.ambient {
+  position: absolute;
+  z-index: -1;
+  pointer-events: none;
+  border-radius: 50%;
+  filter: blur(100px);
+}
+
+.ambient-one {
+  top: 100px;
+  left: 50%;
+  width: 300px;
+  height: 300px;
+  transform: translateX(-50%);
+  background: rgba(213, 196, 154, 0.065);
+}
+
+.ambient-two {
+  top: 480px;
+  right: -180px;
+  width: 260px;
+  height: 260px;
+  background: rgba(39, 75, 75, 0.09);
+}
+
+.topbar,
+main {
+  width: min(100% - 40px, 680px);
+  margin-inline: auto;
+}
+
+.topbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 28px 0;
+  border-bottom: 1px solid var(--border);
+}
+
+.wordmark {
+  font-size: 19px;
+  font-weight: 750;
+  letter-spacing: -0.7px;
+}
+
+.wordmark span,
+.period {
+  color: var(--gold);
+}
+
+.top-label,
+.eyebrow,
+.section-number {
+  font-size: 10px;
+  letter-spacing: 2px;
+  color: var(--muted);
+}
+
+.hero {
+  padding: 110px 0 100px;
+  text-align: center;
+}
+
+.eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.status-dot {
+  width: 6px;
+  height: 6px;
+  background: var(--teal);
+  border-radius: 50%;
+  box-shadow: 0 0 10px rgba(39, 75, 75, 0.7);
+}
+
+.hero h1 {
+  margin: 26px 0 8px;
+  font-size: clamp(58px, 12vw, 90px);
+  font-weight: 650;
+  letter-spacing: -5px;
+  line-height: 1.1;
+}
+
+.tagline {
+  margin: 26px 0 14px;
+  font-size: clamp(23px, 5vw, 34px);
+  line-height: 1.45;
+  font-weight: 350;
+  letter-spacing: -0.7px;
+}
+
+.tagline span {
+  color: var(--gold);
+}
+
+.intro {
+  max-width: 330px;
+  margin: 22px auto 30px;
+  color: var(--muted);
+  font-size: 14px;
+}
+
+.explore {
+  display: inline-flex;
+  align-items: center;
+  gap: 18px;
+  padding: 12px 19px;
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  font-size: 12px;
+  transition: border-color 180ms, background 180ms;
+}
+
+.explore span {
+  color: var(--gold);
+}
+
+.explore:hover {
+  border-color: rgba(213, 196, 154, 0.5);
+  background: rgba(213, 196, 154, 0.04);
+}
+
+.links-section {
+  padding: 35px 0 85px;
+  border-top: 1px solid var(--border);
+}
+
+.section-heading {
+  display: flex;
+  align-items: baseline;
+  gap: 13px;
+  margin-bottom: 24px;
+}
+
+.section-heading h2 {
+  font-size: 17px;
+  font-weight: 500;
+  margin: 0;
+}
+
+.link-list {
+  display: grid;
+  gap: 12px;
+}
+
+.link-card {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 18px;
+  border: 1px solid var(--border);
+  border-radius: 9px;
+  background: rgba(255, 255, 255, 0.018);
+  transition: background 200ms, border-color 200ms,
+    transform 200ms;
+}
+
+.link-card:hover {
+  background: var(--surface-hover);
+  border-color: rgba(213, 196, 154, 0.3);
+  transform: translateY(-2px);
+}
+
+.link-icon {
+  display: grid;
+  place-items: center;
+  width: 42px;
+  height: 42px;
+  flex-shrink: 0;
+  border-radius: 7px;
+  background: #202125;
+  color: var(--gold);
+  font-size: 11px;
+  letter-spacing: 0.5px;
+}
+
+.link-copy {
+  display: grid;
+  flex: 1;
+  gap: 2px;
+}
+
+.link-copy strong {
+  font-size: 13px;
+  font-weight: 550;
+}
+
+.link-copy small {
+  color: var(--muted);
+  font-size: 11px;
+}
+
+.link-arrow {
+  color: var(--muted);
+  transition: color 180ms, transform 180ms;
+}
+
+.link-card:hover .link-arrow {
+  color: var(--gold);
+  transform: translate(2px, -2px);
+}
+
+footer {
+  display: flex;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 22px 0 30px;
+  border-top: 1px solid var(--border);
+  color: var(--muted);
+  font-size: 11px;
+}
+
+@media (max-width: 480px) {
+  .topbar,
+  main {
+    width: calc(100% - 32px);
+  }
+
+  .top-label {
+    font-size: 8px;
+    letter-spacing: 1px;
+  }
+
+  .hero {
+    padding: 85px 0 75px;
+  }
+
+  .hero h1 {
+    letter-spacing: -3px;
+  }
+
+  .link-card {
+    padding: 15px;
+  }
+
+  footer {
+    flex-wrap: wrap;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    scroll-behavior: auto !important;
+    transition: none !important;
+  }
+}
